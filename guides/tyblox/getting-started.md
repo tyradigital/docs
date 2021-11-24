@@ -54,7 +54,7 @@ client.on("ready", () => {
     console.log("Logged in as " + client.user.username)
 })
 
-client.login(process.env.cookie) // Make sure its the correct value name for your Roblox CookieExample B
+client.login(process.env.cookie) // Make sure its the correct value name for your Roblox Cookie
 ```
 {% endcode %}
 {% endtab %}
