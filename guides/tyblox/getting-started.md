@@ -100,3 +100,20 @@ client.login(cookie)
 
 Git is a fantastic tool to keep track of your code changes and allows you to upload progress to services like [Github](https://github.com). While this is super useful to share code with other developers, it can also have you mistakenly upload your files with sensitive data such as your [cookie](getting-started.md#cookie).
 
+### Using `.gitignore`
+
+Start off by making a `.gitignore` file. You may use the example below. It is most recommended to use this file to keep certain files safe so you don't mistakenly upload them into github. In this example, we have our `.env` **OR** `settings.json` ignored by git, We also have the `/node_modules` folder ignored because it isn't needed, instead you can just run `npm install` if you have the `package.json` file.&#x20;
+
+```gitignore
+# Node Modules
+
+/node_modules
+# If you want you may also ignore `package-lock.json` as it isn't needed
+# and when you run `npm i` it makes one for you.
+
+
+# Security Files
+.env
+# REPLACE WITH `settings.json` IF YOU USED THAT INSTEAD
+```
+
