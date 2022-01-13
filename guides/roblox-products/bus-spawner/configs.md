@@ -27,9 +27,9 @@ Any Items marked with a star :star: are **required**&#x20;
 
 {% tabs %}
 {% tab title="Basic Spawner" %}
-#### :star:Default Settings
+#### :star: Default Settings
 
-> The **defaultSettings** field is if you want the spawner to pick the default settings, you can look in the main file, but please do not edit it to see the default settings. If it is set to **true**, then nothing set in your config file will be in effect.
+> The **`defaultSettings`** field is if you want the spawner to pick the default settings, you can look in the main file, but please do not edit it to see the default settings. If it is set to **true**, then nothing set in your config file will be in effect.
 >
 > **Value Options:** \
 > ****\
@@ -38,6 +38,53 @@ Any Items marked with a star :star: are **required**&#x20;
 > **Default Value:**\
 > \
 > `false`
+
+#### :star: Title
+
+> The **`title`** field is if the name at the top of your spawner. You could name this your group name, or just name it 'My Epic Bus Spawner' if you'd like.
+>
+> **Value Options:** \
+> ****\
+> ****`String`
+>
+> **Default Value:**\
+> \
+> `'Spawner'`
+
+#### Theme
+
+> The **`theme`** field is if you want to have it be light or dark theme (Psst, dark is cooler :sunglasses:).
+>
+> **Value Options:** \
+> ****\
+> ****`'light'` | `'dark'`
+>
+> **Default Value:**\
+> \
+> `light`
+
+#### :star:Despawn on Leave
+
+> The **`despawnOnLeave`** field is if you want the spawner to despawn someones bus after the exit the server/game. This is useful to prevent unnessecary lag and so you don't have to btools somebody's bus when they leave.
+>
+> **Value Options:** \
+> ****\
+> ****`true` | `false`
+>
+> **Default Value:**\
+> \
+> `true`
+
+#### :star:Default Settings
+
+> The **`defaultSettings`** field is if you want the spawner to pick the default settings, you can look in the main file, but please do not edit it to see the default settings. If it is set to **true**, then nothing set in your config file will be in effect.
+>
+> {% tabs %}
+  {% tab title="Basic Spawner" %}
+  hi
+  {% endtab %}
+  {% endtabs %}
+
 {% endtab %}
 
 {% tab title="Pro Spawner" %}
