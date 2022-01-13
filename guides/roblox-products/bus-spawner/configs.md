@@ -32,8 +32,8 @@ Any Items marked with a star :star: are **required**&#x20;
 > The **`defaultSettings`** field is if you want the spawner to pick the default settings, you can look in the main file, but please do not edit it to see the default settings. If it is set to **true**, then nothing set in your config file will be in effect.
 >
 > **Value Options:** \
-> ****\
-> ****`true` | `false`
+> \
+> `true` | `false`
 >
 > **Default Value:**\
 > \
@@ -44,8 +44,8 @@ Any Items marked with a star :star: are **required**&#x20;
 > The **`title`** field is if the name at the top of your spawner. You could name this your group name, or just name it 'My Epic Bus Spawner' if you'd like.
 >
 > **Value Options:** \
-> ****\
-> ****`String`
+> \
+> `String`
 >
 > **Default Value:**\
 > \
@@ -56,8 +56,8 @@ Any Items marked with a star :star: are **required**&#x20;
 > The **`theme`** field is if you want to have it be light or dark theme (Psst, dark is cooler :sunglasses:).
 >
 > **Value Options:** \
-> ****\
-> ****`'light'` | `'dark'`
+> \
+> `'light'` | `'dark'`
 >
 > **Default Value:**\
 > \
@@ -68,20 +68,28 @@ Any Items marked with a star :star: are **required**&#x20;
 > The **`despawnOnLeave`** field is if you want the spawner to despawn someones bus after the exit the server/game. This is useful to prevent unnessecary lag and so you don't have to btools somebody's bus when they leave.
 >
 > **Value Options:** \
-> ****\
-> ****`true` | `false`
+> \
+> `true` | `false`
 >
 > **Default Value:**\
 > \
 > `true`
 
-#### :star:Default Settings
+#### :star: Extra Spawner Categories
 
-> The **`defaultSettings`** field is if you want the spawner to pick the default settings, you can look in the main file, but please do not edit it to see the default settings. If it is set to **true**, then nothing set in your config file will be in effect.
+> The **`extraSpawnerCategories`** field is if you want to add more spawner categories (up-to-4).
 >
 > {% tabs %}
-  {% tab title="Basic Spawner" %}
-  hi
+  {% tab title="Category Two (categoryTwo)" %}
+    > This is the second, non-paid category you are allowed to have. If you don't want it you can just not include the **`extraSpawnerCategories`** object in the configuration file, or set `categoryTwo` to `false`.
+    > 
+    > **Value Options:** \
+    > \
+    > `String` | `false`
+    >
+    > **Default Value:**\
+    > \
+    > `false`
   {% endtab %}
   {% endtabs %}
 
