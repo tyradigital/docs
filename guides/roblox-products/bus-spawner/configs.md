@@ -79,7 +79,7 @@ Any Items marked with a star :star: are **required**&#x20;
 
 > The **`extraSpawnerCategories`** field is if you want to add more spawner categories (up-to-4).
 >
-> {% tabs %}
+  {% tabs %}
   {% tab title="Category Two (categoryTwo)" %}
     > This is the second, non-paid category you are allowed to have. If you don't want it you can just not include the **`extraSpawnerCategories`** object in the configuration file, or set `categoryTwo` to `false`.
     > 
