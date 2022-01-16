@@ -1,10 +1,6 @@
----
-description: Here you can find how to configure your spawner to your personal liking.
----
-
 # Bus Spawner Configurations
 
-### Default Config File
+### Example Config File
 
 {% code title="Basic Config File" %}
 ```lua
@@ -26,16 +22,16 @@ return {
 ### ALL Configuration Options
 
 {% hint style="info" %}
-Any Items marked with a star :star: are **required**
+Any Items marked with a star :star: are **required**&#x20;
 {% endhint %}
 
 {% tabs %}
 {% tab title="Basic Spawner" %}
-:star: **Default Settings**
+#### :star: Default Settings
 
 > The **`defaultSettings`** field is if you want the spawner to pick the default settings, you can look in the main file, but please do not edit it to see the default settings. If it is set to **true**, then nothing set in your config file will be in effect.
 >
-> **Value Options:**\
+> **Value Options:** \
 > \
 > `true` | `false`
 >
@@ -43,11 +39,11 @@ Any Items marked with a star :star: are **required**
 > \
 > `false`
 
-:star: **Title**
+#### :star: Title
 
 > The **`title`** field is if the name at the top of your spawner. You could name this your group name, or just name it 'My Epic Bus Spawner' if you'd like.
 >
-> **Value Options:**\
+> **Value Options:** \
 > \
 > `String`
 >
@@ -55,11 +51,11 @@ Any Items marked with a star :star: are **required**
 > \
 > `'Spawner'`
 
-**Theme**
+#### Theme
 
 > The **`theme`** field is if you want to have it be light or dark theme (Psst, dark is cooler :sunglasses:).
 >
-> **Value Options:**\
+> **Value Options:** \
 > \
 > `'light'` | `'dark'`
 >
@@ -67,11 +63,11 @@ Any Items marked with a star :star: are **required**
 > \
 > `light`
 
-:star:**Despawn on Leave**
+#### :star:Despawn on Leave
 
 > The **`despawnOnLeave`** field is if you want the spawner to despawn someones bus after the exit the server/game. This is useful to prevent unnessecary lag and so you don't have to btools somebody's bus when they leave.
 >
-> **Value Options:**\
+> **Value Options:** \
 > \
 > `true` | `false`
 >
@@ -79,28 +75,32 @@ Any Items marked with a star :star: are **required**
 > \
 > `true`
 
-:star: **Extra Spawner Categories**
+#### :star: Extra Spawner Categories
 
 > The **`extraSpawnerCategories`** field is if you want to add more spawner categories (up-to-4).
-
-{% tabs %}
-{% tab title="Category Two (categoryTwo)" %}
-```
-> This is the second, non-paid category you are allowed to have. If you don't want it you can just not include the **`extraSpawnerCategories`** object in the configuration file, or set `categoryTwo` to `false`.
-> 
-> **Value Options:** \
-> \
-> `String` | `false`
 >
-> **Default Value:**\
-> \
-> `false`
-```
+  {% tabs %}
+  {% tab title="Category Two (categoryTwo)" %}
+    > This is the second, non-paid category you are allowed to have. If you don't want it you can just not include the **`extraSpawnerCategories`** object in the configuration file, or set `categoryTwo` to `false`.
+    > 
+    > **Value Options:** \
+    > \
+    > `String` | `false`
+    >
+    > **Default Value:**\
+    > \
+    > `false`
+  {% endtab %}
+  {% endtabs %}
+
 {% endtab %}
-{% endtabs %}
+
+{% tab title="Pro Spawner" %}
+
 {% endtab %}
 
 {% tab title="ELITE (Custom Order) Spawner" %}
-soon
+,
 {% endtab %}
 {% endtabs %}
+
