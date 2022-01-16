@@ -6,7 +6,7 @@ description: A guide on how to setup the bus vehicle spawner for roblox bus comm
 
 ### Initial Setup
 
-Once you have imported the .RBXM file that you have downloaded, ungroup everything in the folder where it asks you to.
+Once you have imported the `.RBXM` file that you have downloaded, ungroup everything in the folder where it asks you to.
 
 ### Adding Buses
 
