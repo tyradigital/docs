@@ -1,0 +1,105 @@
+---
+sidebar_position: 1
+title: Setup
+---
+
+## Installing
+
+Start off by making sure you have node and npm installed. Then install the package.
+
+```sh
+$ npm install tyblox.js
+```
+
+## Cookie
+
+### What is a cookie?
+
+A cookie is a value stored in your browser that websites can access. In this use case, the only cookie we care about is the `.ROBLOSECURITY` cookie.
+
+### How do I get my `.ROBLOSECURITY` cookie?
+
+:::danger
+
+### NEVER GIVE AWAY YOUR COOKIE TO ANYONE! <a href="never_give_away_cookies" id="never_give_away_cookies"></a>
+
+:::
+
+## Example A (Recommended)
+
+In this example, you are using env (environmental varibales) to safely and securely store your cookie
+
+### Storing your cookie
+
+```env
+cookie=put your cookie here
+```
+
+### Main File
+
+Your main file should look a bit like this. Make sure you have the dependancies shown in this such as the [`dotenv`](https://npmjs.com/package/dotenv) dependancy.
+
+```js title="index.js"
+const tyblox = require("tyblox.js"); // Can be named anything, preferably tyblox.
+const client = new tyblox.Client(); // Can be named anything - just remember to keep the same name
+require("dotenv").config();
+
+client.on("ready", () => {
+  console.log("Ready!");
+
+  console.log("Logged in as " + client.user.username);
+});
+
+client.login(process.env.cookie); // Make sure its the correct value name for your Roblox Cookie
+```
+
+## Example B (Better for beginning coders)
+
+In this example, you are using basic code to get your application up and running. We still recommend you use **Example A **however for better security.
+
+### Storing your cookie
+
+```json title="settings.json"
+{
+  "cookie": "put your cookie here"
+}
+```
+
+### Index File
+
+Your main file should look a bit like this. Make sure that if you change the name for any of these values, you update any methods or objects under the variable names.
+
+```js title="index.js"
+const tyblox = require("tyblox.js"); // Can be named anything, preferably tyblox.
+const client = new tyblox.Client(); // Can be named anything - just remember to keep the same name
+const { cookie } = require("./settings.json");
+
+client.on("ready", () => {
+  console.log("Ready!");
+
+  console.log("Logged in as " + client.user.username);
+});
+
+client.login(cookie);
+```
+
+## Git and `.gitignore`
+
+Git is a fantastic tool to keep track of your code changes and allows you to upload progress to services like [Github](https://github.com). While this is super useful to share code with other developers, it can also have you mistakenly upload your files with sensitive data such as your [cookie](getting-started.md#cookie).
+
+### Using `.gitignore`
+
+Start off by making a `.gitignore` file. You may use the example below. It is most recommended to use this file to keep certain files safe so you don't mistakenly upload them into github. In this example, we have our `.env` **OR** `settings.json` ignored by git, We also have the `/node_modules` folder ignored because it isn't needed, instead you can just run `npm install` if you have the `package.json` file.&#x20;
+
+```gitignore title=".gitignore"
+# Node Modules
+
+/node_modules
+# If you want you may also ignore `package-lock.json` as it isn't needed
+# and when you run `npm i` it makes one for you.
+
+
+# Security Files
+.env
+# REPLACE WITH `settings.json` IF YOU USED THAT INSTEAD
+```
