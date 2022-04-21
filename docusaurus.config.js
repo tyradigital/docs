@@ -115,7 +115,7 @@ const config = {
       announcementBar: {
         id: 'in_works',
         content:
-          '<strong>This documentation is extremely in progress, just as <code>tyblox.js</code> itself is</strong>',
+          '<strong>This documentation is in progress, just as <code>tyblox.js</code> itself is</strong>',
         backgroundColor: '#0000001a',
         textColor: '#5f98c0',
         isCloseable: false,
