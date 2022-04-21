@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/main/intro">
-            Get started in 5 mins ⏱️
+            Get started in 5 minutes ⏱️
           </Link>
         </div>
       </div>
@@ -30,11 +30,8 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Docs`}
-      description="Documentation for everything from Tyra Digital.">
+      description="Documentation for all of our products and services.">
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
     </Layout>
   );
 }
