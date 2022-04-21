@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Tyra Docs',
+  title: 'Tyra Digital',
   tagline: 'Documentation for everything from Tyra Digital.',
   url: 'https://tyra-docs.netlify.app',
   baseUrl: '/',
