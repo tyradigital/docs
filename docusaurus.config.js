@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Tyra Digital',
   tagline: 'Docs for everything from Tyra Digital.',
-  url: 'https://tyblox-js-docs.netlify.app',
+  url: 'https://tyra-docs.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
