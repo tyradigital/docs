@@ -3,6 +3,6 @@ import React from "react";
 
 export default function Home(): JSX.Element {
   return (
-    <Redirect to="/docs/intro"></Redirect>
+    <Redirect to="/docs/main/intro"></Redirect>
   );
 }

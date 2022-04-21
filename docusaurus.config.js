@@ -6,15 +6,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Tyblox.js',
-  tagline: 'The most powerful ROBLOX api wrapper',
+  title: 'Tyra Digital',
+  tagline: 'Docs for everything from Tyra Digital.',
   url: 'https://tyblox-js-docs.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Tyra Digital', // Usually your GitHub org/user name.
-  projectName: 'tyblox.js-docs', // Usually your repo name.
+  projectName: 'tyra-docs', // Usually your repo name.
 
   presets: [
     [
@@ -22,15 +22,19 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars/main.js'),
+          path: "docs/main",
+          routeBasePath: "docs/main",
           // Please change this to your repo.
-          editUrl: 'https://github.com/tyradigital/tyblox.js-docs/tree/master/docs/',
+          editUrl: 'https://github.com/tyradigital/tyblox.js-docs/edit/master/docs/main',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/tyradigital/tyblox.js-docs/tree/master/blog/',
+            'https://github.com/tyradigital/tyblox.js-docs/edit/master/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -44,20 +48,21 @@ const config = {
     ({
       navbar: {
         hideOnScroll: true,
-        title: 'Tyblox.js',
+        title: 'Tyra Digital',
         logo: {
           alt: 'Tyra Digital Logo',
           src: 'img/logo.png',
         },
         items: [
-          {
-            type: 'docsVersionDropdown',
-            position: 'right'
-          },
+          // {
+          //   type: 'docsVersionDropdown',
+          //   docsPluginId: 'rbx-products',
+          //   position: 'right'
+          // },
           {
             type: 'doc',
             docId: 'intro',
-            position: 'left',
+            position: 'left',   
             label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
@@ -76,17 +81,17 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: '/docs/intro',
+                to: '/docs/main/intro',
               },
             ],
           },
           {
             title: 'Community',
             items: [
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/z69AMHDc4u',
-              },
+              // {
+              //   label: 'Discord',
+              //   href: 'https://discord.gg/z69AMHDc4u',
+              // },
               {
                 label: 'Tyra Digital Twitter',
                 href: 'https://twitter.com/tyradigital',
@@ -122,6 +127,39 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+    plugins: [
+        [
+          '@docusaurus/plugin-content-docs',
+          {
+            id: 'rbx-products',
+            path: 'docs/rbx-products',
+            routeBasePath: 'docs/rbx-products',
+            sidebarPath: require.resolve('./sidebars/rbx-products.js'),
+          },
+        ],
+        [
+          '@docusaurus/plugin-content-docs',
+          {
+            id: 'tyblox-js',
+            path: 'docs/tyblox-js',
+            routeBasePath: 'docs/tyblox-js',
+            sidebarPath: require.resolve('./sidebars/tyblox-js.js'),
+          },
+        ],
+        [
+          'client-redirects',
+          /** @type {import('@docusaurus/plugin-client-redirects').Options} */
+          ({
+            redirects: [
+                // {
+                //   from: ['/docs/rbx-products/bus-spawner'],
+                //   to: '/docs/rbx-products/bus-spawner/setup',
+                // },
+            ],
+          }),
+        ],
+    ]
 };
 
 module.exports = config;
