@@ -152,10 +152,10 @@ const config = {
           /** @type {import('@docusaurus/plugin-client-redirects').Options} */
           ({
             redirects: [
-                // {
-                //   from: ['/docs/rbx-products/bus-spawner'],
-                //   to: '/docs/rbx-products/bus-spawner/setup',
-                // },
+                {
+                  from: ['/docs'],
+                  to: '/docs/main/intro',
+                },
             ],
           }),
         ],
