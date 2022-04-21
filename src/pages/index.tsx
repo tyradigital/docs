@@ -30,7 +30,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="The most powerful ROBLOX api wrapper">
+      description="Documentation for everything from Tyra Digital.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

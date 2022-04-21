@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Tyra Digital',
-  tagline: 'Docs for everything from Tyra Digital.',
+  title: 'Docs',
+  tagline: 'Documentation for everything from Tyra Digital.',
   url: 'https://tyra-docs.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -26,7 +26,7 @@ const config = {
           path: "docs/main",
           routeBasePath: "docs/main",
           // Please change this to your repo.
-          editUrl: 'https://github.com/tyradigital/tyblox.js-docs/edit/master/docs/main',
+          editUrl: 'https://github.com/tyradigital/docs/edit/next/docs/main',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true
         },
@@ -34,7 +34,7 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/tyradigital/tyblox.js-docs/edit/master/blog/',
+            'https://github.com/tyradigital/docs/edit/next/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
