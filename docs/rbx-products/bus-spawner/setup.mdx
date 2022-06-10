@@ -11,29 +11,35 @@ Once you have imported the `.RBXM` file that you have downloaded, ungroup everyt
 
 To add buses to the spawner, move the model into the 'Buses' folder within ServerStorage.
 
-Next, go to `ReplicatedStorage -> Buses`. Copy the `00` `BoolValue` and paste it into which category you would like.
+Next, go to `ReplicatedStorage -> Buses -> Spawner -> Data` and pick a category. You should start with `Category1` for now. Copy the `BUSNUMBERHEREEXAMPLE` `Configuration` Item and paste it into which category you would like.
 
-`CategoryR` is the primary spawning category, `CategoryR2` is the secondary spawning category.
+The categories are listed in order 1-4.
 
 Once you have pasted the value into the folder, rename the value to the bus name and check the `Attributes` section of the value in the Properties tab.
 
 You will see different values. You are free to customize these to your liking.
 
-## Values
+## Attributes
 
-### Basic
+| Name           |  Type   |                                                                                                                                                                                               Description |
+| :------------- | :-----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| AssignedDriver | String  |                                                                                                                                     The **ROBLOX User Id** of the player who you want assigned to the bus |
+| Available      | Boolean | If the bus is available. To make out of service check the `Servicing` attribute, this is used to tell if the bus has been spawned. **_Editing this value may mess up how the spawner deals with buses!_** |
+| CurrentDriver  | String  |                                                           Internal information used by the spawner to know who is driving the bus. **_Editing this value may mess up how the spawner deals with buses!_** |
+| Description    | String  |                                                                                                                                           Description of the bus that the player can see when spawning it |
+| Image          | String  |                                                                                                                                                 The **Image ID** that the player can see when spawning it |
+| ModelName      | String  |                                                                    The Name of Bus Model (ex: 2020 ICCE) that the player can see when spawning it **_SEE [Model Name & It's use](#model-name--its-use)_** |
+| Servicing      | Boolean |                                                                                                                                                     Used by the spawner to know if the bus is in service. |
+| Spare          | Boolean |                                                                                                                                                        Used by the spawner to know if the bus is a spare. |
 
-| Name          |      Type      |                                                                                                        Description |
-| :------------ | :------------: | -----------------------------------------------------------------------------------------------------------------: |
-| CurrentDriver |     String     | Internal information used by the spawner to know who is driving the bus. Editing this value may BREAK the spawner! |
-| Description   |     String     |                                                   Description of the bus that the player can see when spawning it. |
-| IsSpare       |    Boolean     |                                            Internal information used by the spawner to know if the bus is a spare. |
-| Model         |     String     |                                                     The model of the bus that the player can see when spawning it. |
-| Year          | Integer/Number |                                                      The year of the bus that the player can see when spawning it. |
+## Model Name & It's use
 
-### Pro & ELITE
+The Model Name Attribute is primarily used for showing the user what the model bus is when they spawn it.
 
-| Name      |     Type      |                                                                                                Description |
-| :-------- | :-----------: | ---------------------------------------------------------------------------------------------------------: |
-| InService |    Boolean    | If the bus is to be spawned at all, used if you want your bus to show up in the spawner but not spawnable. |
-| DecalId   | String/Number |                                                             The DecalId to be shown when spawning the bus. |
+In your [configuration](/docs/rbx-products/bus-spawner/configuration), you can see there is a value named `busModelSpawnType`. It is set to `"basic"` and recommended thst way for new users.
+
+If you want to set it to `"advanced"`, that is fine and advanced does increase performance by a lot, as each bus model adds on to server lag, which then goes impacts all players.
+
+To see how to use the `"advanced"` option, [see here.](/docs/rbx-products/bus-spawner/advanced-spawning)
+
+If you are **not** planning on using the advanced option, you may delete the `BusLocations` Folder in workspace.
