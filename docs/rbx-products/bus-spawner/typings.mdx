@@ -1,0 +1,139 @@
+---
+sidebar_position: 10
+title: Spawner Typings
+---
+
+## LUAU
+
+This uses LUAU types. I recommend reading more about it to understand how it works. https://luau-lang.org/typecheck
+
+## Full typings file
+
+```lua
+export type ColorSchemeOption = "dark" | "light" | "blue";
+export type CategoryTypeOption = "open" | "rank" | "clothing" | "gamepass" | "premium"
+
+export type BusResult = "NO_WORKSPACE_FOLDER" | "NO_MODELS_FOLDER" | "NO_BUS_FOUND"
+export type SpawnBusResult = BusResult | "UNABLE_TO_SPAWN" | "ALREADY_HAS_BUS_SPAWNED" | "PERMISSION_DENIED" | "NO_MODEL_GIVEN" | "INVALID_MODEL_GIVEN" | "UNABLE_TO_TELEPORT_BUS" | "UNABLE_TO_TELEPORT_PLAYER" | "SPAWNED"
+export type DespawnBusResult = BusResult | "UNABLE_TO_DESPAWN" | "DESPAWNED_NOT_DESTROYED" | "DESTROYED_NOT_AVAILABLE" |"DESPAWNED"
+export type RefuelBusResult = BusResult | "UNABLE_TO_REFUEL" | "REFUELED"
+export type TurnOffBusResult = BusResult | "UNABLE_TO_TURN_BUS_OFF" | "TURNED_OFF_BUS"
+
+export type ThemeConfig = {
+	title: string;
+	colorScheme: ColorSchemeOption;
+	logoImageId: number;
+}
+
+export type CategoryConfig = {
+	title: string;
+	categoryType: CategoryTypeOption;
+	assetId: number?;
+	minimumRank: number?;
+}
+
+export type CategoryConfigs = {
+	Category1: CategoryConfig;
+	Category2: CategoryConfig?;
+	Category3: CategoryConfig?;
+	Category4: CategoryConfig?;
+}
+
+export type GroupConfig = {
+	enabled: boolean;
+	groupId: number;
+	minimumSpawnerRank: number;
+	minimumAdminRank: number;
+	allowVipOwnersServerAdmin: boolean;
+}
+
+export type Config = {
+	theme: ThemeConfig;
+	categories: CategoryConfigs;
+	groupSettings: GroupConfig;
+	busModelsLocation: Folder;
+	depsawnOnPlayerLeave: boolean;
+	teleportPlayerToBus: boolean;
+	busModelSpawnType: "basic" | "advanced";
+}
+
+export type EventResponse<T> = {
+	status: "OK" | "ERROR";
+	message: string;
+	data: T;
+}
+
+export type NotificationObject = {
+	plrName: string;
+	plrId: number;
+	body: string;
+	global: boolean?;
+}
+
+
+export type ColorSchemeConfig = {
+	primary: Color3;
+	secondary: Color3;
+	tertiary: Color3;
+	infoBackgroundColor: Color3;
+	infoContentBackgroundColor: Color3;
+	primaryTextColor: Color3;
+	dashboardButtonColor: Color3;
+	dashboardBoxColor: Color3;
+	dashboardNAColor: Color3;
+	navListTextColor: Color3;
+	welcomeTextColor: Color3;
+	designerTextColor: Color3;
+	spawnerButtonColor: Color3;
+	assignmentTextColor: Color3;
+	notificationStrokeColor: Color3;
+	contentFrameBackgroundId: number;
+	notificationFrameBackgroundId: number;
+	dashboardIconId: number;
+	busIconId: number;
+}
+```
+
+## ColorSchemeOption
+
+A List of Options for the Color Scheme
+
+## CategoryTypeOption
+
+A List of Options for the Category Type
+
+## BusResult \*
+
+(Applies for **all** bus result types) List of Options for the end result depending on the kind of bus event
+
+## ThemeConfig
+
+Contains items for configuring the theme in the spawner configuration
+
+## CategoryConfig
+
+Contains items for configuring a category in the spawner configuration
+
+## CategoryConfigs
+
+Contains list of category config's
+
+## GroupConfig
+
+Contains items for configuring the group in the spawner configuration
+
+## Config
+
+Contains items for configuring the spawner
+
+## EventResponse`<T>`
+
+Contains items for the remote function event response object - with a generic type paramater for the `data` property.
+
+## NotificationObject
+
+Contains items for a notification object usually used when interacting with the ROBLOX [MessagingService](https://create.roblox.com/docs/reference/engine/classes/MessagingService)
+
+## ColorSchemeConfig
+
+Contains all items used for initalizing and setting the color scheme.
