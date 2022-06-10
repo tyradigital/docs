@@ -44,6 +44,29 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'CICWEZ2RUQ',
+  
+        // Public API key: it is safe to commit it
+        apiKey: 'f0fdda3621a6107443529254479c814e',
+  
+        indexName: 'tyra',
+  
+        // Optional: see doc section below
+        contextualSearch: true,
+  
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+        externalUrlRegex: 'external\\.com|domain\\.com',
+  
+        // Optional: Algolia search parameters
+        searchParameters: {},
+  
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: false,
+  
+        //... other Algolia params
+      },
       navbar: {
         hideOnScroll: true,
         title: 'Tyra Digital',
@@ -115,7 +138,7 @@ const config = {
       announcementBar: {
         id: 'in_works',
         content:
-          '<strong>This documentation is in progress, just as <code>tyblox.js</code> itself is</strong>',
+          'This documentation is in ongoing progress | <strong>NEW SPAWNER RELEASED! Check it out!</strong>',
         backgroundColor: '#0000001a',
         textColor: '#5f98c0',
         isCloseable: false,
