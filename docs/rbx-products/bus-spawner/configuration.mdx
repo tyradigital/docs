@@ -5,29 +5,64 @@ title: Configuration
 
 ## Example Config File
 
+We provided you with an example configuration file if needed.
+
 ```lua tile="config.lua"
--- VIEW https://docs.tyra.digital/guides/roblox-products/bus-spawner/configs FOR MORE DETAILS
+--!strict
+local Typings = require(game:GetService'ReplicatedStorage'.Spawner.SpawnerTypings);
 
-return {
-	defaultSettings = false,
+--[[
 
-	title = 'My Groups Spawner',
-	theme = 'light',
-	despawnOnLeave = true,
-	extraSpawnerCategories = {
-		categoryTwo = 'Secondary Spawn',
-	}
+ONLY EDIT THE CONFIG TABLE!
+
+Need help? Visit https://docs.tyra.digital/docs/rbx-products/bus-spawner/configuration/
+
+]]
+
+local config: Typings.Config = {
+	theme = {
+		title = "My Spawner",
+		colorScheme = "dark",
+		logoImageId = 9428951785,
+	},
+
+	categories = {
+		Category1 = {
+			title = "Spawn Bus",
+			categoryType = "open",
+		},
+	},
+
+	groupSettings = {
+		enabled = false,
+		groupId = 13299030,
+		minimumSpawnerRank = 1,
+		minimumAdminRank = 255,
+		allowVipOwnersServerAdmin = false
+	},
+
+	busModelsLocation = game.ServerStorage.BusModels,
+	depsawnOnPlayerLeave = false,
+	teleportPlayerToBus = false,
+	busModelSpawnType = "basic"
 }
+
+return config;
 ```
 
 ## Configuration Options
 
 ### Basic Configuration Options
 
-| Name                   | Required |                                                                                                          Description                                                                                                          |                                   Value Choices | DefaultValue |
-| :--------------------- | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----------------------------------------------: | -----------: |
-| DefaultSettings        | ✔️       | If you want the spawner to pick the default settings, you can look in the main file, but please do not edit it to see the default settings. If it is set to **true**, then nothing set in your config file will be in effect. |                               `true` \| `false` |      `false` |
-| Title                  | ✔️       |                                               If the name at the top of your spawner. You could name this your group name, or just name it 'My Neat Bus Spawner' if you'd like.                                               |                                        `string` |  `"Spawner"` |
-| Theme                  | ❌       |                                                                       f you want to have it be light or dark theme (Psst, dark is cooler :sunglasses:).                                                                       |                           `"light"` \| `"dark"` |    `"light"` |
-| DespawnOnLeave         | ✔️       |                   If you want the spawner to despawn someones bus after the exit the server/game. This is useful to prevent unnessecary lag and so you don't have to btools somebody's bus when they leave.                   |                               `true` \| `false` |       `true` |
-| ExtraSpawnerCategories | ✔️       |                                                                                  If you want to add more spawner categories (up-to 3 extra).                                                                                  | Object with `cateogryTwo` as `false` \| `false` |      `false` |
+| Name                                          | Required |                                                               Description                                                                |                                                  Value Choices | DefaultValue |
+| :-------------------------------------------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------: | -----------: |
+| [theme](#theme-configuration-options)         | ✔️       | Includes all the data for your theme such as a title, custom logo image, and color themes! (Blue & Dark Theme are the best :sunglasses:) |    [View this for value choices](#theme-configuration-options) |              |
+| [categories](#category-configuration-options) | ✔️       |                                          Includes all the data about the different categories.                                           | [View this for value choices](#category-configuration-options) |              |
+| [groupSettings](#group-configuration-options) | ✔️       |                                Includes all the data about your group and group settings for the spawner.                                |    [View this for value choices](#group-configuration-options) |              |
+| busModelsLocation                             | ✔️       |                                       If you want to add more spawner categories (up-to 3 extra).                                        |                Object with `cateogryTwo` as `false` \| `false` |      `false` |
+
+### Theme Configuration Options
+
+### Category Configuration Options
+
+### Group Configuration Options
