@@ -1,0 +1,22 @@
+---
+sidebar_position: 3
+title: Advanced Spawning Setup
+---
+
+## What does Advanced Spawning mean?
+
+Advanced spawning means that to the player, the buses will spawn as normal; however, this way decreases lag in your game by almost 50%, as most lag comes from the buses.
+While sitting in server storage, it takes up a lot of the games memory which causes it to lag. This new method of spawning decreases the lag by using one model for all buses that use the same model anyways.
+So all the buses with the model "2015 Thomas C2" will only use one actual roblox model.
+
+If you are **not** planning on using the advanced option, you may delete the `BusLocations` Folder in workspace.
+
+## Setup
+
+1. First, go to your configuration and set the `busModelSpawnType` value to `"advanced"` <br/> ![Config Image with the busModelSpawnType](/img/docs/busModelSpawnTypeConfig.png)<br/> ![Config Image with the busModelSpawnType now set to "advanced"](/img/docs/busModelSpawnTypeConfigAdv.png)
+2. Then, for this example we will be having our "model" be a "2015 Thomas C2" - For all buses that will just be using the same "2015 Thomas C2", go and set the `ModelName` attribute to "2015 Thomas C2". <br/>![Gif changing the Model Name](/img/docs/busModelName.gif)
+3. Now, make sure the `BusLocations` Folder is ungrouped from the `WORKSPACE-UNGROUP` folder. Now you can move the arrow whereever you want it to go. The bus will spawn in the very center of that part. And the front of the bus is facing in the direction of the arrow. <br/>![Moving the Arrow](/img/docs/freeMovingArrow.gif)
+4. **Repeat Step 3 For each bus with the Model of 2015 Thomas C2 (_or whatever other model_) -_Remember to rename the workspace part to the corresponding bus number_ **(The parts will turn transparent automatically once the game is played.)
+5. **Repeat Steps 2-4 For each Model you have**
+6. Spawn your bus now with less lag. In this example we made the workspace part visible for you to see.
+   ![Spawning a bus with advanced spawning](/img/docs/spawnBusAdvanced.gif)
