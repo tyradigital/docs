@@ -30,7 +30,7 @@ This system offers badges that can be placed above the name of the user. To do t
 
 **Explaination:**
 
-```lua
+```luau showLineNumbers
 if plr:GetRankInGroup(GROUPIDHERE) >= RANKIDHERE then
     NT.Frame.Status.BADGENAMEHERE.Visible = true
 end
@@ -38,7 +38,7 @@ end
 
 **Example:**
 
-```lua title="example.lua"
+```luau showLineNumbers title="example.lua"
 if plr:GetRankInGroup(12345) >= 12 then -- Anyone in the group with the ID of 12345 and has the rank 12 or above will get the Developer badge.
     NT.Frame.Status.Developer.Visible = true
 end
@@ -48,7 +48,7 @@ end
 
 **Explaination:**
 
-```lua
+```luau showLineNumbers
 local MPS = game:GetService("MarketplaceService")
 if MPS:UserOwnsGamepassAsync(plr.UserId, GAMEPASSIDHERE) then
     NT.Frame.Status.BADGENAMEHERE.Visible = true
@@ -57,7 +57,7 @@ end
 
 **Example:**
 
-```lua
+```luau showLineNumbers title="example.lua"
 local MPS = game:GetService("MarketplaceService")
 if MPS:UserOwnsGamepassAsync(plr.UserId, 123456) then
     NT.Frame.Status.Donator.Visible = true
@@ -75,7 +75,7 @@ end
 
 **Explaination:**
 
-```lua
+```luau showLineNumbers
 if plr.UserId == USERIDHERE then
     NT.Frame.Status.BADGENAMEHERE.Visible = true
 end
@@ -84,7 +84,7 @@ end
 
 **Example:**
 
-```lua
+```luau showLineNumbers title="example.lua"
 if plr.UserId == 1234 then
     NT.Frame.Status.Cool.Visible = true
 end
