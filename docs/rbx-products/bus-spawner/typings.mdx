@@ -9,9 +9,10 @@ This uses LUAU types. I recommend reading more about it to understand how it wor
 
 ## Full typings file
 
-```lua
+```lua showLineNumbers title="SpawnerTypings.lua"
+--!strict
 export type ColorSchemeOption = "dark" | "light" | "blue";
-export type CategoryTypeOption = "open" | "rank" | "clothing" | "gamepass" | "premium"
+export type CategoryTypeOption = "open" | "rank" | "clothing" | "gamepass" | "premium" | "mypod"
 
 export type BusResult = "NO_WORKSPACE_FOLDER" | "NO_MODELS_FOLDER" | "NO_BUS_FOUND"
 export type SpawnBusResult = BusResult | "UNABLE_TO_SPAWN" | "ALREADY_HAS_BUS_SPAWNED" | "PERMISSION_DENIED" | "NO_MODEL_GIVEN" | "INVALID_MODEL_GIVEN" | "UNABLE_TO_TELEPORT_BUS" | "UNABLE_TO_TELEPORT_PLAYER" | "SPAWNED"
