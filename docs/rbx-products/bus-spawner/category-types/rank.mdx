@@ -1,0 +1,27 @@
+---
+sidebar_position: 2
+title: Rank
+---
+
+Example Configuration:
+
+```lua
+{
+	title = "My Category",
+    // highlight-next-line
+	categoryType = "rank",
+    // highlight-next-line
+    minimumRank = 123,
+}
+```
+
+:::note Group Config
+
+Make sure your group configuration is enabled with the correct group ID!
+
+:::
+
+To set a category to a minimum group rank - set the `categoryType` to `"rank"`
+
+Then, set your `minimumRank` to a number between 1 and 255
+_(You can technically set it to 0 but then that defeats the purpose of it being rank locked anyways)_
