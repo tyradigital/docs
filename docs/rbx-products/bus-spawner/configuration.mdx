@@ -7,7 +7,7 @@ title: Configuration
 
 We provided you with an example configuration file if needed.
 
-```lua tile="config.lua"
+```lua showLineNumbers tile="config.lua"
 --!strict
 local Typings = require(game:GetService'ReplicatedStorage'.Spawner.SpawnerTypings);
 
@@ -54,15 +54,51 @@ return config;
 
 ### Basic Configuration Options
 
-| Name                                          | Required |                                                               Description                                                                |                                                  Value Choices | DefaultValue |
-| :-------------------------------------------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------: | -----------: |
-| [theme](#theme-configuration-options)         | ✔️       | Includes all the data for your theme such as a title, custom logo image, and color themes! (Blue & Dark Theme are the best :sunglasses:) |    [View this for value choices](#theme-configuration-options) |              |
-| [categories](#category-configuration-options) | ✔️       |                                          Includes all the data about the different categories.                                           | [View this for value choices](#category-configuration-options) |              |
-| [groupSettings](#group-configuration-options) | ✔️       |                                Includes all the data about your group and group settings for the spawner.                                |    [View this for value choices](#group-configuration-options) |              |
-| busModelsLocation                             | ✔️       |                                       If you want to add more spawner categories (up-to 3 extra).                                        |                Object with `cateogryTwo` as `false` \| `false` |      `false` |
+| Name                                          |                                                               Description                                                                |                                                                               Type |                                                  Value Choices |                   DefaultValue |
+| :-------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------: | -------------------------------------------------------------: | -----------------------------: |
+| [theme](#theme-configuration-options)         | Includes all the data for your theme such as a title, custom logo image, and color themes! (Blue & Dark Theme are the best :sunglasses:) |                  [ThemeConfig](/docs/rbx-products/bus-spawner/typings#themeconfig) |    [View this for value choices](#theme-configuration-options) |                                |
+| [categories](#category-configuration-options) |                                          Includes all the data about the different categories.                                           |          [CategoryConfigs](/docs/rbx-products/bus-spawner/typings#categoryconfigs) | [View this for value choices](#category-configuration-options) |                                |
+| [groupSettings](#group-configuration-options) |                                Includes all the data about your group and group settings for the spawner.                                |                  [GroupConfig](/docs/rbx-products/bus-spawner/typings#groupconfig) |    [View this for value choices](#group-configuration-options) |                                |
+| busModelsLocation                             |                                       If you want to add more spawner categories (up-to 3 extra).                                        | Path to [`Folder`](https://create.roblox.com/docs/reference/engine/classes/Folder) |                                           Any folder in `game` | `game.ServerStorage.BusModels` |
+| depsawnOnPlayerLeave                          |                             If you want a spawned bus to despawn when the associated player leaves the game                              |                                                                            boolean |                                                 `true`/`false` |                        `false` |
+| teleportPlayerToBus                           |                                     If you want to teleport a player to their bus when they spawn it                                     |                                                                            boolean |                                                 `true`/`false` |                        `false` |
+| busModelSpawnType                             |       The method of spawning a bus - if using advanced, see [Advanced Spawning](/docs/rbx-products/bus-spawner/advanced-spawning)        |                                                                             string |                                         `"basic"`/`"advanced"` |                      `"basic"` |
 
 ### Theme Configuration Options
 
+| Name        |                                                               Description                                                                |   Type |               Value Choices | DefaultValue |
+| :---------- | :--------------------------------------------------------------------------------------------------------------------------------------: | -----: | --------------------------: | -----------: |
+| title       | Includes all the data for your theme such as a title, custom logo image, and color themes! (Blue & Dark Theme are the best :sunglasses:) | string |                  Any string | "My Spawner" |
+| colorScheme |                                          Includes all the data about the different categories.                                           | string | `"light"`/`"dark"`/`"blue"` |     `"dark"` |
+| logoImageId |                                Includes all the data about your group and group settings for the spawner.                                | number |                  Any number | `9428951785` |
+
 ### Category Configuration Options
 
+#### Categories
+
+| Name                   | Required |             Description             |                                                                    Type |
+| :--------------------- | :------- | :---------------------------------: | ----------------------------------------------------------------------: |
+| [Category1](#category) | YES      | Includes all the data for Category1 | [CategoryConfig](/docs/rbx-products/bus-spawner/typings#categoryconfig) |
+| [Category2](#category) | NO       | Includes all the data for Category2 | [CategoryConfig](/docs/rbx-products/bus-spawner/typings#categoryconfig) |
+| [Category3](#category) | NO       | Includes all the data for Category3 | [CategoryConfig](/docs/rbx-products/bus-spawner/typings#categoryconfig) |
+| [Category4](#category) | NO       | Includes all the data for Category4 | [CategoryConfig](/docs/rbx-products/bus-spawner/typings#categoryconfig) |
+
+#### Category
+
+| Name         | Required |                         Description                         |   Type |                                                                   Value Choices |                            DefaultValue |
+| :----------- | :------- | :---------------------------------------------------------: | -----: | ------------------------------------------------------------------------------: | --------------------------------------: |
+| title        | YES      |                   Title of this category                    | string |                                                                      Any string | `nil` unless first - then `"Spawn Bus"` |
+| categoryType | YES      |                      The Category Type                      | number | [CategoryTypeOption](/docs/rbx-products/bus-spawner/typings#categorytypeoption) |      `nil` unless first - then `"open"` |
+| assetId      | NO       |            The asset ID to access this category             | number |                                                                      Any number |                                   `nil` |
+| mypodProduct | NO       | The Product Name for your mypod hub to access this category | string |                                                                      Any String |                                   `nil` |
+| minimumRank  | NO       |         Minimum Group Rank to access this category          | number |                                                                      Any number |                                   `nil` |
+
 ### Group Configuration Options
+
+| Name                      |                   Description                   |    Type |  Value Choices | DefaultValue |
+| :------------------------ | :---------------------------------------------: | ------: | -------------: | -----------: |
+| enabled                   |  If any of these group features should be used  | boolean | `true`/`false` |      `false` |
+| groupId                   |           The ID of the Roblox Group            |  number |     Any number |   `13299030` |
+| minimumSpawnerRank        |      Minimum Group Rank to see the spawner      |  number |     Any number |          `1` |
+| minimumAdminRank          |    Minimum Group Rank to see the admin panel    |  number |     Any number |        `255` |
+| allowVipOwnersServerAdmin | If VIP Server Owners should see the admin panel | boolean | `true`/`false` |      `false` |
